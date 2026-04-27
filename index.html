@@ -580,12 +580,6 @@ Write 6–8 screener questions that identify the right people. For each, note wh
         <div class="uc-panel-title">Jobs To Be Done (JTBD)</div>
         <p class="uc-panel-desc">Jobs To Be Done reframes user research around the underlying motivation behind a behaviour — not what people do, but what progress they're trying to make. Claude is a strong partner for JTBD work: generating job statements from research, identifying competing solutions, and helping you map the forces that drive and resist behaviour change.</p>
 
-        <div class="video-placeholder">
-          <div class="video-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <div class="video-caption">Watch: JTBD with Claude</div>
-          <div class="video-sub">Video — coming soon</div>
-        </div>
-
         <div class="panel-section-label"><span class="panel-section-tag purple">Prompt Patterns</span></div>
         <div class="prompts-list">
           <div class="prompt-card">
@@ -1197,7 +1191,18 @@ Help me understand this user before we begin observing:
           </div>
 
           <!-- OBSERVE -->
+          <div style="margin-bottom:0.5rem;">
+            <p style="font-size:14.5px;color:var(--navy);opacity:0.75;line-height:1.8;margin-bottom:0.75rem;">The empathy map — Says, Does, Thinks, Feels — looks simple until you're trying to sort 600 words of messy dictation into it alone. The work isn't the framework. The work is the classification. And classification is exactly where AI earns its time.</p>
+            <div style="background:rgba(141,170,68,0.1);border-left:3px solid var(--olive);border-radius:0 6px 6px 0;padding:0.7rem 1rem;margin-bottom:1.25rem;font-size:13px;line-height:1.65;color:var(--navy);">
+              <strong>Tool chain:</strong> Co-work with your observation file (e.g. <code style="font-size:12px;background:rgba(0,0,0,0.06);padding:0.1em 0.4em;border-radius:3px;">obs_P03.txt</code>) → run the prompt below → Claude can output the quadrants directly in chat, or you can paste into Notion, or ask Claude to lay it out in Notion or FigJam.
+            </div>
+          </div>
           <div class="prompt-card">
+            <div class="prompt-card-head"><span class="prompt-card-name">Observe — Empathy Map Classification</span><button class="copy-btn" onclick="copyPrompt(this)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy</button></div>
+            <div class="prompt-text">Read this observation file and sort each moment or observation into an empathy-map quadrant: Says (things the participant said aloud), Does (observable actions), Thinks (inferred mental state — only if the evidence supports the inference), Feels (inferred emotional state — same rule). For each entry, include the original note and a one-line label. If a moment spans two quadrants, include it in both. Flag any moments that don't fit any quadrant — I want to see those separately.</div>
+            <div class="prompt-annotation"><strong>Why this works:</strong> The quadrant rules ("only if the evidence supports the inference") stop Claude from over-inferring in Thinks and Feels — which is the most common empathy map mistake. The flagged residuals often surface the most interesting moments: things that don't fit the model are worth a second look. You can also ask Claude to output directly into FigJam as Says/Thinks/Does/Feels frames.</div>
+          </div>
+          <div class="prompt-card" style="margin-top:0.75rem;">
             <div class="prompt-card-head"><span class="prompt-card-name">Observe — Empathy Map + AEIOU</span><button class="copy-btn" onclick="copyPrompt(this)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy</button></div>
             <div class="prompt-text">User: [persona or user type]
 Observation/interview notes: [paste quotes, behaviours, and observations]
